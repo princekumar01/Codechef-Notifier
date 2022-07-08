@@ -1,0 +1,43 @@
+{
+    "name": " Codechef notifier project ",
+    "version" : "1.0.0",
+    "description" : "This is my very first cool extension",
+    "manifest_version" : 3,
+    "content_scripts":[{
+        "matches":["https://www.codechef.com/submit-old/*"],
+        "js":["content-script.js"],
+         "all-frames": true
+    }],
+    "background":{
+        "service_worker":"background.js"  
+    },
+    "permissions":["storage","notifications", "webRequest","tabs"],
+    "host_permissions": ["*://www.codechef.com/get_submission_status/*","*://www.codechef.com/error_status_table/*","*://www.codechef.com/","*://www.codechef.com/problems/*"],
+    "action":{
+      "default_popup": "popup.html",
+        "default_title":"created by noob programmer!",
+        "default_icon":{
+          "16": "images/wrong_16.png",
+          "48": "images/wrong_48.png",
+          "128": "images/wrong_128.png"
+        }
+    },
+    "icons": {
+        "16": "images/correct_chef_16.png",
+        "48": "images/correct_chef_48.png",
+        "128": "images/correct_chef_128.png"
+      },
+      "commands": {
+                    "clean-all": {
+                                    "suggested_key": {
+                                                        "default": "Alt+Shift+Delete",
+                                                        "mac": "Alt+Shift+Delete"
+                                                      },
+                                    "description": "clean all the submission results"
+                                 }
+                  }
+     
+}
+
+
+
