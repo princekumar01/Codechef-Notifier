@@ -1,1 +1,1 @@
-# Note-Maker
+# Codechef Notifier
